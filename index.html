@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartDOC</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://unpkg.com/tesseract.js@v2.1.4/dist/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>smart<b>DOC</b></h1>
+    <button class="toggleMode" onclick="toggleTheme()">
+      <span id="modeIcon">🌙</span> <span class="modeText">Dark Mode</span>
+    </button>
+  </header>
+
+  <main>
+    <input type="file" id="fileInput" accept="application/pdf,image/*" multiple />
+    <div id="progressContainer" class="hidden">
+        <div id="progressBar"></div>
+    </div>
+    <div id="fileList"></div>
+    <div id="editorContainer" class="hidden">
+      <h2>Edit Extracted Text</h2>
+      <textarea id="textEditor"></textarea>
+      <input type="text" id="fileNameInput" placeholder="Enter filename (without extension)" />
+      <button id="downloadDocx">Download as Word</button>
+      <button id="downloadPdf">Download as PDF</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

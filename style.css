@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Matangi:wght@300..900&display=swap');
+
+:root {
+  --bg: #f4f4f4;
+  --text: #111;
+  --card: #fff;
+  --color: whitesmoke;
+  --bgt: #1f1f1f;
+}
+
+.dark-mode {
+  --bg: #1f1f1f;
+  --text: #eee;
+  --card: #2a2a2a;
+  --color: rgb(44, 44, 44);
+  --bgt: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0rem 2rem;
+  background-color: var(--card);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.toggleMode {
+  position: absolute;
+  top: 10px;
+  right: 2rem;
+  font-size: 1rem;
+  background-color: var(--bgt);
+  color: var(--color);
+  padding: 10px 18px;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.toggleMode:hover {
+  transform: scale(1.05);
+}
+
+header h1 {
+  font-family: "Matangi", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 10px;
+}
+
+header h1 b {
+  font-weight: 1000;
+  font-size: 2.2rem;
+}
+
+#fileInput {
+  margin: 1.5rem;
+  margin-left: 3rem;
+  width: 90%;
+  max-width: 400px;
+}
+
+.card {
+  background: var(--card);
+  padding: 1.2rem;
+  margin: 1rem auto;
+  margin-top: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 95%;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  background-color: var(--bgt);
+  color: var(--color);
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.delete {
+  background-color: #f34b4e;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+textarea {
+  width: 95%;
+  height: 300px;
+  padding: 1rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  margin: 1rem auto;
+  display: block;
+  resize: vertical;
+  background: var(--card);
+  color: var(--bgt);
+}
+
+.hidden {
+  display: none;
+}
+
+#progressContainer {
+  width: 90%;
+  background-color: #ccc;
+  border-radius: 20px;
+  margin: 1rem auto;
+  height: 20px;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background-color: #28a745;
+  transition: width 0.3s ease;
+}
+
+h2 {
+  margin: 1rem;
+  text-align: center;
+}
+
+#fileNameInput {
+  margin-left: 2rem;
+  width: 80%;
+  max-width: 400px;
+  display: block;
+  background: var(--card);
+  color: var(--bgt);
+  height: 25px;
+}
+
+#downloadDocx, #downloadPdf {
+  margin-left:2rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header h1 b {
+    font-size: 2rem;
+  }
+
+  .toggleMode {
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+  }
+
+  .toggleMode .modeText {
+    display: none;
+  }
+
+  textarea {
+    height: 250px;
+  }
+
+  button {
+    width: 100%;
+    max-width: 250px;
+    margin: 0.5rem auto;
+    display: block;
+  }
+
+  #fileNameInput {
+    width: 90%;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header h1 b {
+    font-size: 1.8rem;
+  }
+
+  .toggleMode {
+    font-size: 1rem;
+    padding: 8px 14px;
+    top: 10px;
+    right: 1rem;
+  }
+
+  textarea {
+    height: 200px;
+    font-size: 0.9rem;
+  }
+}
+
